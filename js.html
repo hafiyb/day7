@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data type</title>
+    <style>
+        button{
+            width: 200px;
+            height: 200px;
+        }
+
+        #hp-bar{
+            height: 10px;
+            width: 100px;
+            background-color: yellow;   
+            transition: all 0.7s;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p id="para"></p>
+        <h1 id="score"></h1>
+
+        <button onclick="change(10, 'blue')">+</button>
+        <button onclick="change(-10, 'red')">-</button>
+
+        <div id="hp-bar"></div>
+    </div>
+</body>
+
+<script>
+    var score = 0;
+
+    document.getElementById('para').innerHTML = "Hello World"
+
+    var scoreText = document.getElementById('score')
+    var hpBar = document.getElementById('hp-bar')
+    scoreText.innerHTML = score
+    scoreText.style.color = "blue";
+    scoreText.style.fontSize = "40px";
+
+    // function change(arg){
+    //     // if(arg == 1){
+    //     //     score += 1;
+    //     //     scoreText.innerHTML = score
+    //     // }
+
+    //     // if(arg == 2){
+    //     //     score -= 1;
+    //     //     scoreText.innerHTML = score
+    //     // }  
+
+    //     score += arg
+    //     scoreText.innerHTML = score
+    // }
+
+    change = (arg , color) =>{
+        score += arg
+        scoreText.innerHTML = score
+        scoreText.style.color = color
+        hpBar.style.width = score + 100 + 'px'
+    }
+</script>
+
+</html>
